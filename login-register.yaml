@@ -1,0 +1,14 @@
+appId: br.com.ae3tecnologia.enrollment.hom
+---
+#Dado que o aplicativo está na tela de login
+#E os campos de CPF e senha estão vazios
+#Quando o usuário toca no botão "Cadastre-se"
+#Então deve ser redirecionado para a tela de cadastro do responsável
+- launchApp:
+    clearState: true
+- assertVisible: Por favor, faça login para continuar
+- assertVisible: Digite seu CPF
+- assertVisible: Digite sua senha
+- assertVisible: Cadastre-se
+- tapOn: Cadastre-se
+- assertVisible: Cadastro do responsável

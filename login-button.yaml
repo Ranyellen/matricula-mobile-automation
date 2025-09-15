@@ -1,0 +1,8 @@
+appId: br.com.ae3tecnologia.enrollment.hom
+---
+- launchApp:
+    clearState: true
+- assertVisible: Por favor, faça login para continuar
+- assertVisible: Digite seu CPF
+- assertVisible: Digite sua senha
+- tapOn: Login

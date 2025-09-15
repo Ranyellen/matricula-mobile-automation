@@ -1,0 +1,24 @@
+appId: br.com.ae3tecnologia.enrollment.hom
+---
+#Dado que o usuário está na tela de Login
+#E que ele tem acesso à internet
+#Quando ele insere um CPF inexistente e uma senha qualquer
+#E clica no botão "Login"
+#Então o sistema deve exibir uma mensagem de erro clara
+- launchApp:
+    clearState: true
+- assertVisible: Por favor, faça login para continuar
+- assertVisible: Digite seu CPF
+- assertVisible: Digite sua senha
+- tapOn: Digite seu CPF
+- inputText: '000.000.000-00'
+- tapOn:
+    id: 0_resource_name_obfuscated
+    index: 17
+- tapOn: Digite sua senha
+- inputText: '01404325239'
+- tapOn:
+    id: 0_resource_name_obfuscated
+    index: 45
+- assertVisible: Login
+- tapOn: Login

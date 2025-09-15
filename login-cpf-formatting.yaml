@@ -1,0 +1,22 @@
+appId: br.com.ae3tecnologia.enrollment.hom
+---
+#Dado que o usuário está na tela de Login
+#Quando ele insere 11 dígitos numéricos no campo CPF
+#Então o campo deve formatar automaticamente com a máscara 000.000.000-00
+- launchApp:
+    clearState: true
+- assertVisible: Por favor, faça login para continuar
+- assertVisible: Digite seu CPF
+- assertVisible: Digite sua senha
+- tapOn: Digite seu CPF
+- inputText: '014.043.252-39'
+- tapOn:
+    id: 0_resource_name_obfuscated
+    index: 17
+- tapOn: Digite sua senha
+- inputText: '01404325239'
+- tapOn:
+    id: 0_resource_name_obfuscated
+    index: 45
+- assertVisible: Login
+- tapOn: Login

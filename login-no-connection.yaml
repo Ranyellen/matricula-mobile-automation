@@ -1,0 +1,34 @@
+appId: br.com.ae3tecnologia.enrollment.hom
+---
+#Dado que o usuário está na tela de Login
+#E que o dispositivo está sem internet
+#Quando ele insere credenciais e clica no botão "Login"
+#Então o sistema deve exibir uma mensagem informando a falta de conexão
+- launchApp:
+    clearState: true
+# Ação: Desativar conexão Wi-Fi
+- swipe: # Abre barra de notificações deslizando do topo
+    start: '50%, 1%'
+    end: '50%, 50%'
+    duration: 500
+- tapOn: Wi-Fi
+
+# Ação: Voltar ao app
+- swipe: # Fecha a barra de notificações deslizando de baixo para cima
+    start: '50%, 50%'
+    end: '91%, 2%'
+- assertVisible: Por favor, faça login para continuar
+- assertVisible: Digite seu CPF
+- assertVisible: Digite sua senha
+- tapOn: Digite seu CPF
+- inputText: '01404325239'
+- tapOn:
+    id: 0_resource_name_obfuscated
+    index: 17
+- tapOn: Digite sua senha
+- inputText: '01404325239'
+- tapOn:
+    id: 0_resource_name_obfuscated
+    index: 45
+- assertVisible: Login
+- tapOn: Login

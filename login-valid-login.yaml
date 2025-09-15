@@ -1,0 +1,4 @@
+appId: br.com.ae3tecnologia.enrollment.hom
+---
+- launchApp:
+    clearState: true
