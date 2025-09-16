@@ -1,0 +1,61 @@
+appId: br.com.ae3tecnologia.enrollment.hom
+---
+#Dado que o aplicativo está na tela de cadastro do responsável
+#E os campos de texto estão vazios
+#Então o usuário toca no botão "Cadastrar"
+- launchApp:
+    clearState: true
+- assertVisible: Por favor, faça login para continuar
+- assertVisible: Digite seu CPF
+- assertVisible: Digite sua senha
+- tapOn: Cadastre-se
+- assertVisible: Cadastro do responsável
+- tapOn:
+    text: CPF do responsável
+    index: 1
+- inputText: '   '
+- tapOn: Pronto
+- tapOn:
+    text: Nome completo do responsável
+    index: 1
+- inputText: '   '
+- tapOn: Pronto
+- tapOn:
+    text: Data de nascimento do responsável
+    index: 1
+- inputText: '   '
+- tapOn: Pronto
+- tapOn:
+    text: Nome da mãe do responsável
+    index: 1
+- inputText: '   '
+- tapOn: Pronto
+- scroll
+- inputText: '   '
+- tapOn: Pronto
+- tapOn:
+    text: E-mail
+    index: 1
+- inputText: '  '
+- tapOn: Pronto
+- tapOn:
+    text: Confirmar E-mail
+    index: 1
+- inputText: '   '
+- tapOn: Pronto
+- tapOn:
+    text: Contato
+    index: 1
+- inputText: '   '
+- tapOn: Pronto
+- scroll
+- scroll
+- tapOn:
+    text: Senha
+    index: 1
+- tapOn: Pronto
+- tapOn:
+    text: Confirmar senha
+    index: 1
+- tapOn: Pronto
+- tapOn: Cadastrar

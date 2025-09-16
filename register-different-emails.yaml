@@ -1,0 +1,110 @@
+appId: br.com.ae3tecnologia.enrollment.hom
+---
+#Dado que o aplicativo está na tela de cadastro do responsável
+#E os campos de e-mails diferentes preenchidos
+#Então o usuário toca no botão "Cadastrar"
+- launchApp:
+    clearState: true
+- assertVisible: Por favor, faça login para continuar
+- assertVisible: Digite seu CPF
+- assertVisible: Digite sua senha
+- tapOn: Cadastre-se
+- assertVisible: Cadastro do responsável
+- tapOn:
+    text: CPF do responsável
+    index: 1
+- inputText: '323.303.730-90'
+- tapOn: Pronto
+- tapOn:
+    text: Nome completo do responsável
+    index: 1
+- inputText: '323.303.730-90 eue'
+- tapOn: Pronto
+- tapOn:
+    text: Data de nascimento do responsável
+    index: 1
+- inputText: '05102000'
+- tapOn: Pronto
+- tapOn:
+    text: Sexo do responsável
+    index: 1
+- tapOn: Feminino
+- tapOn:
+    text: Nome da mãe do responsável
+    index: 1
+- inputText: '323.303.730-90'
+- tapOn: Pronto
+- scroll
+- inputText: '323.303.730-90'
+- tapOn: Pronto
+- tapOn:
+    text: E-mail
+    index: 1
+- inputText: '12@gmail.com'
+- tapOn: Pronto
+- tapOn:
+    text: Confirmar E-mail
+    index: 1
+- inputText: '11@gmail.com'
+- tapOn: Pronto
+- tapOn:
+    text: Estado civil do responsável
+    index: 1
+- swipe:
+    from:
+      text: Pesquisar
+    direction: UP
+- tapOn: Viúvo(a)
+- tapOn:
+    text: Contato
+    index: 1
+- inputText: '99999999999'
+- tapOn: Pronto
+- scroll
+- tapOn:
+    text: Raça/cor do responsável
+    index: 1
+- swipe:
+    from:
+      text: Pesquisar
+    direction: UP
+- tapOn: Sem Informacao
+- tapOn:
+    text: País de nascimento do responsável
+    index: 1
+- repeat:
+    times: 10
+    commands:
+      - swipe:
+          from:
+            text: Pesquisar
+          direction: UP
+- tapOn: Zimbabwe
+- tapOn:
+    text: Estado de nascimento do responsável
+    index: 1
+- repeat:
+    times: 2
+    commands:
+      - swipe:
+          from:
+            text: Pesquisar
+          direction: UP
+- tapOn: Midlands Province
+- tapOn:
+    text: Cidade de Nascimento do responsável
+    index: 1
+- inputText: 'Qualquer cidade em algum lugar estranho'
+- tapOn: Pronto
+- scroll
+- tapOn:
+    text: Senha
+    index: 1
+- inputText: aa33
+- tapOn: Pronto
+- tapOn:
+    text: Confirmar senha
+    index: 1
+- inputText: aa33
+- tapOn: Pronto
+- tapOn: Cadastrar
